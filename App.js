@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { AppLoading } from "expo";
+// import { AppLoading } from "expo";
+import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
 import { Asset } from "expo-asset";
 import { View, ImageBackground, AsyncStorage, Text } from "react-native";
