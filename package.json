@@ -47,5 +47,8 @@
     "babel-preset-expo": "~9.1.0",
     "cross-env": "^7.0.2"
   },
+  "resolutions": {
+    "@react-native-community/datetimepicker": "6.1.2"
+  },
   "private": true
 }
