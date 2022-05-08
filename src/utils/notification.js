@@ -3,16 +3,14 @@ import * as Notifications from "expo-notifications";
 import { AsyncStorage } from "react-native";
 import azkar from "../store/azkar.js";
 import Constant from "expo-constants";
-import * as Permissions from "expo-permissions";
 
 export const askForPermission = async () => {
   if (Constant.isDevice) {
-    const { status: existingStatus } = await Permissions.getAsync(
-      Permissions.NOTIFICATIONS
-    );
+    const { status: existingStatus } =
+      await Notifications.getPermissionsAsync();
     let finalState = existingStatus;
     if (existingStatus !== "granted") {
-      const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+      const { status } = await Notifications.getPermissionsAsync();
       finalState = status;
     }
     if (finalState !== "granted") {
